@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+    struct lista{
+        int valor; 
+        struct lista *proximo;
+    };
+    
+    struct lista *procurarValor(struct lista *pLista, int valor){
+        
+        while(pLista != NULL){
+            if(pLista->valor == valor){
+                return(pLista);
+            } else {
+                pLista = pLista->proximo;
+            }
+            return (NULL);
+        }
+
+        
+    int main() {
+        
+        struct lista *procurarValor(struct lista *pLista, int valor);
+        struct lista m1, m2, m3;
+        struct lista *resultado, *gancho = &m1;
+        int x;
+        
+        m1.valor = 5;
+        m2.valor = 10;
+        m3.valor = 15; 
+        
+        m1.proximo= &m2;
+        m2.proximo = &m3;
+        m3.proximo = NULL;
+        
+        printf("digite o valor para a busca.\n");
+        scanf("%d", &x);
+        
+        resultado = procurarValor(gancho, x);
+        
+            if(resultado == NULL){
+                printf("Valor não encontrado");
+            } else {
+                printf("%d\n Valor encontrado.", resultado->valor);
+            }
+            
+            return 0;
+}
+    
