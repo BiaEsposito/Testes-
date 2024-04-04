@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main(void){
+    int x,i, cha, resposta=0, competidor[5];
+    
+    
+    do{
+        scanf("%d", &cha);
+    }while(cha>5 || cha<0);
+   
+    //resposta dos competidores
+    
+    for(x=0;x<5;x++){
+    do{
+        scanf("%d", &competidor[x]);
+        
+    }while(competidor[x]>5 || competidor[x]<0);
+    
+    
+    //verificar respostas certas
+    
+    if(competidor[x]==cha){
+        resposta++;
+    }
+    }
+    
+    printf("%d\n", resposta);
+}
